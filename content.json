@@ -1,0 +1,1006 @@
+{
+  "version": "Prototyp 0.2 · Testfassung",
+  "topics": {
+    "basis": {
+      "name": "Basiswissen",
+      "color": "#FFFFFF"
+    },
+    "geld": {
+      "name": "Geld & Währungen",
+      "color": "#2BB5A8"
+    },
+    "plan": {
+      "name": "Planen & Budget",
+      "color": "#F5B82E"
+    },
+    "spar": {
+      "name": "Sparen & Vorsorgen",
+      "color": "#F06A9B"
+    },
+    "kredit": {
+      "name": "Kredit & Schulden",
+      "color": "#E2463F"
+    },
+    "betrug": {
+      "name": "Betrug & Abzocke",
+      "color": "#8E7BE0"
+    }
+  },
+  "levels": [
+    1,
+    2,
+    5
+  ],
+  "snippets": [
+    {
+      "id": "basis-cent",
+      "topic": "basis",
+      "text": "1 € sind 100 Cent."
+    },
+    {
+      "id": "geld-weg-zurueck",
+      "topic": "geld",
+      "text": "Geschenkt ist weg. Geliehen kommt zurück."
+    },
+    {
+      "id": "plan-muss-kann",
+      "topic": "plan",
+      "text": "Erst das Muss, dann das Kann."
+    },
+    {
+      "id": "betrug-warnsignale",
+      "topic": "betrug",
+      "text": "Zu billig, zu eilig, Gutscheincodes, fremder Link: Finger weg."
+    },
+    {
+      "id": "kredit-raten",
+      "topic": "kredit",
+      "text": "Viele kleine Raten sind zusammen eine große Rate."
+    },
+    {
+      "id": "spar-notgroschen",
+      "topic": "spar",
+      "text": "Notgroschen: 3 bis 6 Monatsausgaben, schnell verfügbar."
+    }
+  ],
+  "upcoming": [
+    {
+      "name": "Frankie",
+      "role": "Musiker",
+      "face": "img/face_frankie.webp"
+    },
+    {
+      "name": "Ronny",
+      "role": "Pechvogel",
+      "face": "img/face_ronny.webp"
+    },
+    {
+      "name": "Sonny",
+      "role": "Unterwelt-Typ",
+      "face": "img/face_sonny.webp"
+    },
+    {
+      "name": "Timo",
+      "role": "Patchwork-Papa",
+      "face": "img/face_timo.webp"
+    },
+    {
+      "name": "Luna",
+      "role": "Hobby-Astrologin",
+      "face": "img/face_luna.webp"
+    }
+  ],
+  "cases": [
+    {
+      "id": "oma",
+      "who": "Oma Erna",
+      "title": "Omas Keks-Einkauf",
+      "topic": "geld",
+      "teaser": "„Herzchen, ich hab mein Köpfchen heut nicht ganz beisammen …“",
+      "img": {
+        "neutral": "img/oma_neutral.webp",
+        "happy": "img/oma_happy.webp",
+        "worried": "img/oma_worried.webp",
+        "face": "img/face_oma.webp"
+      },
+      "beats": [
+        {
+          "t": "say",
+          "text": "Ah, mein Schätzele, da bist du ja! Also, ich hab grad beim Bäcker gestanden, so eine Schlange, bis vor zur Metzgerei, stell dir vor …"
+        },
+        {
+          "t": "tip",
+          "text": "Du antwortest, indem du eine Option antippst. Manche Antworten sind nur Plauderei. Andere zählen – da passt du auf, Rookie."
+        },
+        {
+          "t": "choice",
+          "kind": "fun",
+          "options": [
+            {
+              "text": "Was ist denn passiert?",
+              "reply": "Ach, die Cordula an der Kasse hatte wieder Zoff mit dem neuen Azubi, wegen der Laugenbrezeln, ich sag dir …"
+            },
+            {
+              "text": "Und, was hast du geholt?",
+              "reply": "Kekse natürlich, für die Mia und den Basti, die mit Schokostückchen. Der Tom mag ja lieber Zimt, ist schon ein kleiner Eigenbrötler, der Bub."
+            },
+            {
+              "text": "Oma, worum geht's eigentlich?",
+              "reply": "Ha, ungeduldig wie meine Erika! Na gut, na gut, ich komm ja schon zum Punkt …"
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "mood": "worried",
+          "text": "Also, Herzchen, ich glaub, ich hab mein Köpfchen heut nicht ganz beisammen. Die Rente kommt ja erst Freitag, und die fünf Miezen brauchen auch noch Futter."
+        },
+        {
+          "t": "choice",
+          "kind": "quiz",
+          "prompt": "Reicht das überhaupt noch für die Miezen, oder soll ich mir da schon Sorgen machen?",
+          "options": [
+            {
+              "text": "Zähl erstmal dein Portemonnaie, bevor du weiterkaufst.",
+              "reply": "Ah, guter Gedanke. Ich häng manchmal zu sehr in den Wolken, sagt meine Erika immer.",
+              "mood": "happy"
+            },
+            {
+              "text": "Ach, kauf einfach weiter, wird schon reichen.",
+              "reply": "Na, wenn du meinst …",
+              "fail": true,
+              "note": "Oma kauft fröhlich weiter ein. Am Donnerstag stehen fünf Katzen vor leeren Näpfchen."
+            },
+            {
+              "text": "Frag doch die Erika, ob sie dir was leiht.",
+              "reply": "Ach, die ist grad bei ihrem Enkel in Bayern, Kegelausflug. Erreich ich frühestens übermorgen."
+            },
+            {
+              "text": "Lass das Katzenfutter halt ganz weg.",
+              "reply": "Ach nein, das geht nicht. Du solltest mal sehen, wie die Mauzi guckt, wenn ihr Näpfchen leer ist."
+            }
+          ]
+        },
+        {
+          "t": "choice",
+          "kind": "fun",
+          "prompt": "Apropos Mauzi – weißt du, dass die neulich dem Postboten aufgelauert hat?",
+          "options": [
+            {
+              "text": "Haha, was ist passiert?",
+              "reply": "Der wollt gar nicht mehr klingeln! Stand fünf Minuten am Gartentor und hat mit dem Päckchen gewedelt.",
+              "mood": "happy"
+            },
+            {
+              "text": "Und die anderen vier Katzen?",
+              "reply": "Ach, frag lieber nicht. Die Schnurri hat gestern mein Sofakissen als Krallenbrett benutzt."
+            },
+            {
+              "text": "Oma, dein Geld?",
+              "reply": "Stimmt, stimmt, ich schweif schon wieder ab! Also …"
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Ach, und da fällt mir noch was ein: Dem Tom hab ich vorhin zehn Euro zugesteckt, für sein Fahrrad. Und der Erika hab ich gestern drei Euro geliehen, für ihre Reise."
+        },
+        {
+          "t": "choice",
+          "kind": "quiz",
+          "prompt": "Weißt du, beim Geld blick ich genauso wenig durch wie beim Fahrrad.",
+          "options": [
+            {
+              "text": "Die 10 € an Tom sind weg. Die kriegst du nicht wieder.",
+              "reply": "Ach so, natürlich, war ja geschenkt. Na, dann muss ich wohl doch genau nachrechnen, was mir wirklich bleibt."
+            },
+            {
+              "text": "Frag Tom doch, ob er dir die 10 € zurückgibt.",
+              "reply": "Aber Schätzchen, um Himmels willen! Geschenkt ist geschenkt, das krieg ich nicht zurück."
+            },
+            {
+              "text": "Warum hast du Tom die 10 € nicht geliehen?",
+              "reply": "Ach nein, ich wollte ihm eine Freude machen. Das Geld soll er mir nicht zurückgeben müssen."
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Weißt du was, sei du mal so gut und sortier mir das eben. Ich häng da grad völlig durcheinander."
+        },
+        {
+          "t": "tip",
+          "text": "Jetzt kommt die Challenge. Die entscheidet über den Fall. Wenn du hängst: Oben rechts liegen deine Snippets."
+        }
+      ],
+      "challenge": {
+        "type": "sort",
+        "title": "Was ist weg, was kommt zurück?",
+        "ask": "Sortier mir das eben, Schätzele.",
+        "bins": [
+          {
+            "id": "weg",
+            "label": "Weg",
+            "color": "#E2463F"
+          },
+          {
+            "id": "zurueck",
+            "label": "Kommt zurück",
+            "color": "#2BB5A8"
+          }
+        ],
+        "items": [
+          {
+            "text": "Kekse beim Bäcker – bezahlt mit 10-€-Schein",
+            "bin": "weg"
+          },
+          {
+            "text": "Rückgeld vom Bäcker – 5,50 €",
+            "bin": "zurueck"
+          },
+          {
+            "text": "10 € an Tom geschenkt",
+            "bin": "weg"
+          },
+          {
+            "text": "3 € an Erika geliehen",
+            "bin": "zurueck"
+          }
+        ],
+        "partialFrom": 2
+      },
+      "outcomes": {
+        "full": {
+          "mood": "happy",
+          "text": "Klasse gemacht, mein Schätzele! Fast so gut wie meine Erika, und die ist eine echte Rechenkünstlerin. Jetzt weiß ich genau, wo ich dran bin – die Miezen kriegen ihr Futter."
+        },
+        "partial": {
+          "mood": "neutral",
+          "text": "Gar nicht schlecht, Herzchen. Jetzt hab ich schon mal eine bessere Ahnung – aber so ganz sicher bin ich mir noch nicht."
+        },
+        "fail": {
+          "mood": "worried",
+          "text": "So hab ich ja gar keinen Überblick, ob meine Miezen noch Futter kriegen … Nicht schlimm, Schätzchen – das gehen wir später einfach nochmal in Ruhe durch."
+        },
+        "early": {
+          "mood": "worried",
+          "text": "Ach du Schreck, die Näpfchen sind leer. Da hätten wir wohl vorher mal nachzählen sollen, was?"
+        }
+      },
+      "snippet": "geld-weg-zurueck",
+      "akte": {
+        "summary": "Oma Erna war beim Bäcker, hat Tom 10 € geschenkt und Erika 3 € geliehen. Die Rente kommt erst Freitag – reicht das Geld noch fürs Katzenfutter?",
+        "mentor": "Geschenkt ist weg, Bambi. Geliehen kommt zurück. Wer das auseinanderhält, weiß, was wirklich im Portemonnaie ist.",
+        "steps": [
+          "Erst zählen, was noch da ist",
+          "Geschenke abhaken – die sind weg",
+          "Geliehenes merken – das kommt zurück"
+        ]
+      }
+    },
+    {
+      "id": "mika",
+      "who": "Mika",
+      "title": "Mikas Monats-Endboss",
+      "topic": "plan",
+      "teaser": "„Moment, mein Zweitjob ruft. Wo waren wir?“",
+      "img": {
+        "neutral": "img/full_prakti.webp",
+        "face": "img/face_prakti.webp"
+      },
+      "beats": [
+        {
+          "t": "say",
+          "text": "Sorry, Moment – das ist bestimmt mein Zweitjob … nee, Werbung. Okay. Hi, ich bin Mika."
+        },
+        {
+          "t": "say",
+          "text": "Ich hab grad mein allererstes Gehalt gekriegt. 820 Euro! Fühlt sich an wie Lotto, ehrlich."
+        },
+        {
+          "t": "choice",
+          "kind": "fun",
+          "options": [
+            {
+              "text": "Glückwunsch! Wofür hast du so geschuftet?",
+              "reply": "Essen ausfahren, Regale einräumen, Nachhilfe und Hunde ausführen. Mein Fahrrad hat mehr Kilometer als ein Taxi."
+            },
+            {
+              "text": "820 Euro – was hast du vor?",
+              "reply": "Oh, Pläne hab ich viele! Genau das ist ja das Problem, haha."
+            },
+            {
+              "text": "Komm zum Punkt, Mika.",
+              "reply": "Okay, Kurzfassung: Ich will nicht wieder am 20. pleite sein."
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Letzten Monat war mein Konto am 20. leer. Ich weiß bis heute nicht, wohin das Geld verschwunden ist. Vielleicht frisst mein Kontostandi heimlich."
+        },
+        {
+          "t": "choice",
+          "kind": "quiz",
+          "prompt": "Wie geh ich das diesmal besser an?",
+          "options": [
+            {
+              "text": "Schreib zuerst auf, was du jeden Monat zahlen musst.",
+              "reply": "Aufschreiben. Klingt nach Hausaufgaben, aber okay."
+            },
+            {
+              "text": "Schau einfach, was am Monatsende übrig ist.",
+              "reply": "Okay! Ich lass es einfach laufen, wird schon.",
+              "fail": true,
+              "note": "Mika lässt es laufen. Am 20. ist das Konto wieder leer – und die Miete kommt erst noch."
+            },
+            {
+              "text": "Wenn's knapp wird, nimm halt den Dispo.",
+              "reply": "Ach stimmt, der Dispo! Dann ist ja immer Geld da …",
+              "fail": true,
+              "note": "Mika rutscht ins Minus. Der Dispo kostet hohe Zinsen – nächsten Monat ist noch weniger da."
+            },
+            {
+              "text": "Frag deine Eltern, ob sie aushelfen.",
+              "reply": "Die haben gerade selbst genug um die Ohren. Und ich will das alleine schaffen!"
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Moment … ja, Zweitjob, bin gleich da! … Okay, hier ist alles, was diesen Monat ansteht. Sortierst du mir das? Was muss sein, was ist nice-to-have?"
+        }
+      ],
+      "challenge": {
+        "type": "sort",
+        "title": "Muss oder Kann?",
+        "ask": "Was muss diesen Monat bezahlt werden – und was ist nur nice-to-have?",
+        "budget": 820,
+        "budgetLabel": "Mikas Gehalt",
+        "bins": [
+          {
+            "id": "muss",
+            "label": "Muss",
+            "color": "#5A4FCF"
+          },
+          {
+            "id": "kann",
+            "label": "Kann",
+            "color": "#F5B82E"
+          }
+        ],
+        "items": [
+          {
+            "text": "WG-Zimmer Miete",
+            "amount": 390,
+            "bin": "muss"
+          },
+          {
+            "text": "Neue Sneaker",
+            "amount": 120,
+            "bin": "kann"
+          },
+          {
+            "text": "Essen & Einkäufe",
+            "amount": 180,
+            "bin": "muss"
+          },
+          {
+            "text": "Konzertticket",
+            "amount": 89,
+            "bin": "kann"
+          },
+          {
+            "text": "Monatsticket",
+            "amount": 49,
+            "bin": "muss"
+          },
+          {
+            "text": "Streaming-Abo",
+            "amount": 13,
+            "bin": "kann"
+          },
+          {
+            "text": "Handyvertrag",
+            "amount": 15,
+            "bin": "muss"
+          },
+          {
+            "text": "Strom-Abschlag",
+            "amount": 30,
+            "bin": "muss"
+          }
+        ],
+        "partialFrom": 5
+      },
+      "outcomes": {
+        "full": {
+          "text": "Okay! 664 Euro Muss, bleiben 156 Euro fürs Kann. Konzert ja, Sneaker nächsten Monat. Fühlt sich gut an, ehrlich."
+        },
+        "partial": {
+          "text": "Okay, fast! Ein paar Sachen sind noch durcheinander – aber ich seh schon viel klarer. Ich schau's mir nochmal an."
+        },
+        "fail": {
+          "text": "Hm, wenn die Sneaker wichtiger sind als die Miete, wohn ich bald im Fahrradkeller … Wir machen das nochmal, ja?"
+        },
+        "early": {
+          "text": "Tja. Am 20. war’s wieder leer. Ich glaub, wir brauchen einen anderen Plan."
+        }
+      },
+      "snippet": "plan-muss-kann",
+      "akte": {
+        "summary": "Mika hat ihr erstes Gehalt bekommen: 820 €. Letzten Monat war das Konto am 20. leer. Diesmal soll es bis zum Monatsende reichen.",
+        "mentor": "Erst das Muss, dann das Kann, Bambi. Wer zuerst feiert, zahlt später doppelt.",
+        "steps": [
+          "Fixkosten zuerst: Miete, Essen, Fahrkarte, Handy, Strom",
+          "Die Muss-Summe vom Geld abziehen: 820 € − 664 € = 156 €",
+          "Was übrig bleibt, ist das Kann-Budget"
+        ]
+      }
+    },
+    {
+      "id": "nova",
+      "who": "Nova",
+      "title": "Der Skin-Deal",
+      "topic": "betrug",
+      "teaser": "„Ein seltener Skin für 20 statt 150 €. Das ist doch legit, oder?“",
+      "img": {
+        "neutral": "img/full_gamer.webp",
+        "face": "img/face_gamer.webp"
+      },
+      "beats": [
+        {
+          "t": "say",
+          "text": "Boss. Kurze Frage. Ganz schnell. Ich hab ein Angebot, das ist … legendär."
+        },
+        {
+          "t": "say",
+          "text": "Der Goldene Drache. Seltenster Skin im ganzen Spiel. Kostet normal 150 Euro. Ich krieg ihn für 20!"
+        },
+        {
+          "t": "choice",
+          "kind": "fun",
+          "options": [
+            {
+              "text": "Wo hast du das Angebot her?",
+              "reply": "Random Typ im Chat. Hat mich einfach angeschrieben. Voll nett eigentlich."
+            },
+            {
+              "text": "Was ist so besonders an dem Skin?",
+              "reply": "Er leuchtet. Er brüllt, wenn man gewinnt. Den hat fast niemand."
+            },
+            {
+              "text": "Ich spiel sowas nicht.",
+              "reply": "Muss man auch nicht verstehen, Boss. Muss man nur fühlen."
+            }
+          ]
+        },
+        {
+          "t": "prop",
+          "kind": "chat",
+          "title": "Privatchat · xX_DealMaster_Xx",
+          "lines": [
+            "Hey! Hab den Goldenen Drachen für dich.",
+            "Nur 20 € – aber nur heute!",
+            "Zahlung bitte mit Gutscheincodes, geht am schnellsten."
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Er will Gutscheincodes. Ich hab noch zwei Karten vom Geburtstag. Soll ich?"
+        },
+        {
+          "t": "choice",
+          "kind": "quiz",
+          "prompt": "Was mach ich jetzt?",
+          "options": [
+            {
+              "text": "Schick die Codes, bevor's weg ist!",
+              "reply": "Okay, okay, ich schick sie … Moment … „Nachricht konnte nicht zugestellt werden“?? Wo ist er hin??",
+              "fail": true,
+              "note": "Codes weg, Typ weg, Skin nie gesehen. Das Geburtstagsgeld ist futsch."
+            },
+            {
+              "text": "Stopp. Schau dir erst mal an, wer das ist.",
+              "reply": "Hm. Sein Account ist … zwei Tage alt. Und hat null Freunde. Das ist weird."
+            },
+            {
+              "text": "Frag mal einen Freund, was der davon hält.",
+              "reply": "Mein Kumpel sagt, das klingt nach dem ältesten Trick im Buch. Aber der ist auch immer so negativ."
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Okay, hier ist der ganze Chat. Was meinst du – wo stinkt das?"
+        }
+      ],
+      "challenge": {
+        "type": "hotspot",
+        "title": "Finde die Warnsignale",
+        "ask": "Tippe alle Nachrichten an, die dich misstrauisch machen sollten. Dann auf „Fertig“.",
+        "header": "xX_DealMaster_Xx · Account seit 2 Tagen",
+        "items": [
+          {
+            "text": "Hey, ich sammle seltene Skins und verkaufe ein paar davon.",
+            "flag": false
+          },
+          {
+            "text": "Den Goldenen Drachen gibt's bei mir für 20 € statt 150 €.",
+            "flag": true,
+            "why": "Viel zu billig"
+          },
+          {
+            "text": "Aber nur heute, morgen ist er weg!",
+            "flag": true,
+            "why": "Zeitdruck"
+          },
+          {
+            "text": "Der Skin passt richtig gut zu deinem Profilbild.",
+            "flag": false
+          },
+          {
+            "text": "Zahl bitte mit Gutscheincodes, das geht am schnellsten.",
+            "flag": true,
+            "why": "Komische Bezahlung"
+          },
+          {
+            "text": "Log dich kurz hier ein: g4mer-trade-deals.net",
+            "flag": true,
+            "why": "Fremder Link"
+          }
+        ],
+        "partialFrom": 2
+      },
+      "outcomes": {
+        "full": {
+          "text": "Puh. Der Typ war fake – ich hab ihn gemeldet und blockiert. Mein Geburtstagsgeld bleibt bei mir. Danke, Boss."
+        },
+        "partial": {
+          "text": "Okay, ein paar Warnsignale hab ich jetzt gecheckt. Aber ehrlich, ein paar hätte ich glatt übersehen …"
+        },
+        "fail": {
+          "text": "Moment, das war alles normal?? Dann wär ich voll reingefallen. Lass uns das nochmal anschauen, Boss."
+        },
+        "early": {
+          "text": "Game over. Codes weg, Typ weg. Ich fühl mich wie nach einem verlorenen Bossfight."
+        }
+      },
+      "snippet": "betrug-warnsignale",
+      "akte": {
+        "summary": "Ein Fremder bietet Nova im Chat einen seltenen Skin für 20 € statt 150 € an – nur heute, nur gegen Gutscheincodes.",
+        "mentor": "Zu billig, zu eilig, komische Bezahlung, fremder Link. Vier Alarmglocken, Bambi. Eine reicht schon zum Abbrechen.",
+        "steps": [
+          "Zu gutes Angebot? Erst mal misstrauisch werden",
+          "Nie mit Gutscheincodes an Fremde zahlen",
+          "Keine fremden Links zum Einloggen – melden und blockieren"
+        ]
+      }
+    },
+    {
+      "id": "milou",
+      "who": "Milou",
+      "title": "Taschen-Tetris",
+      "topic": "kredit",
+      "teaser": "„Die Tasche gibt’s in vier Raten. Ist doch praktisch, oder?“",
+      "img": {
+        "neutral": "img/full_influencer.webp",
+        "face": "img/face_influencer.webp"
+      },
+      "beats": [
+        {
+          "t": "say",
+          "text": "Okay, hi, ich film das grad nicht, versprochen. Also … vielleicht ein bisschen."
+        },
+        {
+          "t": "say",
+          "text": "Ich hab DIE Tasche gefunden. 240 Euro – aber in vier Raten à 60 Euro. Easy, oder?"
+        },
+        {
+          "t": "prop",
+          "kind": "ad",
+          "title": "Jetzt kaufen – später zahlen!",
+          "lines": [
+            "Nur 4 × 60 €",
+            "Sofort shoppen, null Stress",
+            "Kleingedruckt: Bei Zahlungsverzug 9,95 € Mahngebühr"
+          ]
+        },
+        {
+          "t": "choice",
+          "kind": "fun",
+          "options": [
+            {
+              "text": "Die ist wirklich schön.",
+              "reply": "Oder?? Meine Follower finden sie auch super. Also, die Hälfte."
+            },
+            {
+              "text": "Brauchst du die wirklich?",
+              "reply": "Brauchen ist so ein hartes Wort. Ich würde sagen: Sie braucht mich."
+            },
+            {
+              "text": "Wie viele Taschen hast du schon?",
+              "reply": "Das ist eine sehr persönliche Frage. … Elf."
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Ich zahl ja eh schon ein paar Sachen in Raten. Handy, Kopfhörer, Jacke. Läuft alles."
+        },
+        {
+          "t": "choice",
+          "kind": "quiz",
+          "prompt": "Raten sind ja quasi gratis, oder?",
+          "options": [
+            {
+              "text": "Klar, Raten merkt man doch kaum.",
+              "reply": "Siehste! Ich klick schon mal auf Kaufen …",
+              "fail": true,
+              "note": "Drei Monate später reicht das Geld nicht mehr für alle Raten. Die ersten Mahnungen kommen – mit Gebühren."
+            },
+            {
+              "text": "Nur wenn du jede Rate sicher zahlen kannst – zusammen mit den anderen.",
+              "reply": "Hm. Zusammen? Die hab ich ehrlich gesagt noch nie zusammengezählt …"
+            },
+            {
+              "text": "Frag doch mal deine Follower.",
+              "reply": "Die Umfrage sagt 87 % ja. Aber die zahlen ja auch nicht meine Raten, oder?"
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Ich hab jeden Monat 100 Euro für mich übrig. Hier sind alle meine Raten. Rechnest du mal mit?"
+        }
+      ],
+      "challenge": {
+        "type": "slider",
+        "title": "Was bleibt übrig?",
+        "ask": "Milou hat 100 € im Monat übrig. Wie viel bleibt, wenn sie die Tasche auch noch in Raten kauft?",
+        "cards": [
+          {
+            "label": "Handy",
+            "value": "25 €"
+          },
+          {
+            "label": "Kopfhörer",
+            "value": "15 €"
+          },
+          {
+            "label": "Jacke",
+            "value": "30 €"
+          },
+          {
+            "label": "Neue Tasche",
+            "value": "60 €",
+            "highlight": true
+          }
+        ],
+        "min": -100,
+        "max": 100,
+        "step": 5,
+        "start": 50,
+        "unit": "€",
+        "signed": true,
+        "label": "Übrig pro Monat",
+        "full": [
+          -30,
+          -30
+        ],
+        "partial": [
+          -45,
+          -15
+        ],
+        "solution": "100 € − (25 + 15 + 30 + 60 €) = −30 €"
+      },
+      "outcomes": {
+        "full": {
+          "text": "Minus 30 Euro?? Jeden Monat? Okay, die Tasche kommt auf meine Wunschliste. Erst die alten Raten abbezahlen."
+        },
+        "partial": {
+          "text": "Okay, irgendwas mit Minus. Das reicht mir schon als Warnsignal – aber genau hab ich's noch nicht."
+        },
+        "fail": {
+          "text": "Wait, das passt doch? … Oh. Ich glaub, wir haben uns verrechnet. Nochmal, bitte!"
+        },
+        "early": {
+          "text": "Okay, die Mahnungen sind echt nicht schön. Ich glaub, ich hab mich da verrechnet."
+        }
+      },
+      "snippet": "kredit-raten",
+      "akte": {
+        "summary": "Milou will eine Tasche für 240 € in vier Raten kaufen. Sie zahlt schon Raten für Handy, Kopfhörer und Jacke – und hat 100 € im Monat übrig.",
+        "mentor": "Einzeln sind Raten klein. Zusammen sind sie ein Brocken. Wer nicht addiert, merkt es erst am Kontoauszug.",
+        "steps": [
+          "Alle Raten zusammenrechnen: 25 + 15 + 30 + 60 = 130 €",
+          "Mit dem Geld vergleichen, das übrig ist: 100 €",
+          "Es fehlen 30 € im Monat – erst alte Raten abbezahlen"
+        ]
+      }
+    },
+    {
+      "id": "leopold",
+      "who": "Leopold",
+      "title": "Der Waschmaschinen-Notfall",
+      "topic": "spar",
+      "teaser": "„Ich habe 14 Excel-Tabellen. Alles im Griff.“",
+      "img": {
+        "neutral": "img/full_bruce.webp",
+        "face": "img/face_bruce.webp"
+      },
+      "beats": [
+        {
+          "t": "say",
+          "text": "Ich grüße Sie. Leopold Ledger. Sie haben sicher schon von mir gehört."
+        },
+        {
+          "t": "choice",
+          "kind": "fun",
+          "options": [
+            {
+              "text": "Leider nein.",
+              "reply": "Nun ja. Das wird sich ändern. Spätestens nach meinem Börsengang."
+            },
+            {
+              "text": "Natürlich, Herr Ledger.",
+              "reply": "Ich wusste es. Mein Ruf eilt mir voraus."
+            },
+            {
+              "text": "Was führt Sie zu mir?",
+              "reply": "Eine Kleinigkeit. Eine Bagatelle. Fast schon unter meiner Würde."
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Meine Waschmaschine hat sich verabschiedet. Reparatur: 600 Euro. Und mein Kapital ist – nun ja – vollständig investiert."
+        },
+        {
+          "t": "say",
+          "text": "Vierzehn Excel-Tabellen, alles durchgeplant. Nur für Waschmaschinen gab es keine Spalte."
+        },
+        {
+          "t": "choice",
+          "kind": "quiz",
+          "prompt": "Wie bezahle ich das nun?",
+          "options": [
+            {
+              "text": "Nimm den Dispo, das geht am schnellsten.",
+              "reply": "Exzellent. Schnell und elegant. Ich überziehe sofort.",
+              "fail": true,
+              "note": "Leopold zahlt monatelang hohe Dispozinsen. Am Ende kostet die Reparatur deutlich mehr als 600 €."
+            },
+            {
+              "text": "Hol erst mal ein günstigeres Angebot ein.",
+              "reply": "Ein zweiter Kostenvoranschlag? Nun … 380 Euro. Hm. Das spart in der Tat."
+            },
+            {
+              "text": "Verkauf doch eine deiner Aktien.",
+              "reply": "Mit Verlust? Ein Mann meines Formats verkauft nicht im Minus! … Aber gut, ich ziehe es in Erwägung."
+            }
+          ]
+        },
+        {
+          "t": "say",
+          "text": "Für die Zukunft: Wie viel sollte ich denn zur Seite legen? Meine festen Ausgaben liegen bei 1.200 Euro im Monat."
+        },
+        {
+          "t": "prop",
+          "kind": "paper",
+          "title": "Leopolds Monatsausgaben",
+          "lines": [
+            "Miete: 750 €",
+            "Essen: 250 €",
+            "Versicherungen: 80 €",
+            "Mobilität: 80 €",
+            "Handy & Internet: 40 €",
+            "Summe: 1.200 €"
+          ]
+        }
+      ],
+      "challenge": {
+        "type": "slider",
+        "title": "Wie groß sollte der Notgroschen sein?",
+        "ask": "Leopold gibt jeden Monat 1.200 € fest aus. Wie viel sollte er mindestens für Notfälle zurücklegen?",
+        "cards": [
+          {
+            "label": "Feste Ausgaben",
+            "value": "1.200 € / Monat"
+          }
+        ],
+        "min": 0,
+        "max": 9000,
+        "step": 300,
+        "start": 600,
+        "unit": "€",
+        "signed": false,
+        "label": "Notgroschen",
+        "full": [
+          3600,
+          7200
+        ],
+        "partial": [
+          2400,
+          9000
+        ],
+        "solution": "3 bis 6 Monatsausgaben: 3 × 1.200 € = 3.600 € bis 6 × 1.200 € = 7.200 €"
+      },
+      "outcomes": {
+        "full": {
+          "text": "Drei bis sechs Monatsausgaben, schnell verfügbar. Brillant! Ich nenne es: Liquiditätsreserve. Klingt teurer."
+        },
+        "partial": {
+          "text": "Eine gewisse Reserve, durchaus. Ob sie zum Notgroschen taugt, wage ich zu bezweifeln."
+        },
+        "fail": {
+          "text": "Das, verehrte Fachkraft, reicht nicht einmal für eine neue Trommel. Wir sollten das nochmals durchrechnen."
+        },
+        "early": {
+          "text": "Die Zinsen … sie wachsen schneller als mein Portfolio. Das war, wie soll ich sagen, suboptimal geplant."
+        }
+      },
+      "snippet": "spar-notgroschen",
+      "akte": {
+        "summary": "Leopolds Waschmaschine ist kaputt: 600 € Reparatur. Sein ganzes Geld steckt in Aktien. Einen Notgroschen hat er nicht.",
+        "mentor": "Ein Notgroschen ist kein Investment, Bambi. Er ist ein Feuerlöscher. Drei Monatsausgaben, besser sechs – und schnell erreichbar.",
+        "steps": [
+          "Feste Monatsausgaben zusammenrechnen: 1.200 €",
+          "Mal drei bis sechs: 3.600 € bis 7.200 €",
+          "Auf ein Konto legen, an das man schnell rankommt"
+        ]
+      }
+    }
+  ],
+  "trainings": [
+    {
+      "topic": "basis",
+      "lines": [
+        "Alles beginnt beim Rechnen, Bambi.",
+        "Ein Euro sind hundert Cent. Preis mal Menge – das zahlst du.",
+        "Klingt banal. Aber wer hier patzt, patzt überall."
+      ],
+      "q": "Drei Brötchen kosten je 0,45 €. Was zahlst du?",
+      "options": [
+        "1,35 €",
+        "1,45 €",
+        "0,135 €"
+      ],
+      "correct": 0,
+      "right": "Sauber gerechnet.",
+      "wrong": "Nochmal langsam: 3 × 45 Cent sind 135 Cent, also 1,35 €."
+    },
+    {
+      "topic": "geld",
+      "lines": [
+        "Geld kann drei Dinge: bezahlen, aufbewahren, Preise vergleichbar machen.",
+        "Was du verschenkst, ist weg. Was du verleihst, kommt – hoffentlich – zurück.",
+        "Und Rückgeld ist kein Gewinn. Das war schon vorher dein Geld."
+      ],
+      "q": "Du leihst einer Freundin 5 €. Was ist das?",
+      "options": [
+        "Geld, das zurückkommt",
+        "Ein Geschenk",
+        "Ein Gewinn"
+      ],
+      "correct": 0,
+      "right": "Genau. Merk's dir – und erinner sie dran.",
+      "wrong": "Geliehen heißt: Es kommt zurück. Geschenkt wäre weg."
+    },
+    {
+      "topic": "plan",
+      "lines": [
+        "Ein Budget ist ein Plan, bevor das Geld weg ist. Nicht danach.",
+        "Erst das Muss: Miete, Essen, Fahrkarte. Dann das Kann.",
+        "Was danach übrig bleibt, darfst du ausgeben. Mit gutem Gewissen."
+      ],
+      "q": "Was gehört zum Muss?",
+      "options": [
+        "Monatsticket für Schule oder Job",
+        "Neue Sneaker",
+        "Streaming-Abo"
+      ],
+      "correct": 0,
+      "right": "Richtig. Ohne Ticket kein Job, ohne Job kein Geld.",
+      "wrong": "Schön wär's. Muss ist, was du zum Leben und Arbeiten brauchst – also das Ticket."
+    },
+    {
+      "topic": "spar",
+      "lines": [
+        "Sparen heißt: heute verzichten, damit morgen was da ist.",
+        "Zuerst kommt der Notgroschen. Drei bis sechs Monatsausgaben, schnell verfügbar.",
+        "Erst danach wird investiert. Nicht umgekehrt."
+      ],
+      "q": "Wofür ist ein Notgroschen da?",
+      "options": [
+        "Für unerwartete Ausgaben wie Reparaturen",
+        "Für den nächsten Urlaub",
+        "Zum Zocken an der Börse"
+      ],
+      "correct": 0,
+      "right": "Genau. Ein Feuerlöscher, kein Spielgeld.",
+      "wrong": "Nee. Der Notgroschen ist für Notfälle – eine kaputte Waschmaschine, eine Reparatur."
+    },
+    {
+      "topic": "kredit",
+      "lines": [
+        "Ein Kredit ist geliehenes Geld. Und Leihen kostet fast immer extra.",
+        "Ratenkauf fühlt sich klein an. Aber alle Raten zusammen musst du jeden Monat stemmen.",
+        "Und der Dispo ist der teuerste Freund, den du haben kannst."
+      ],
+      "q": "Du hast 100 € übrig und zahlst Raten von 40 €, 35 € und 30 €. Was bleibt?",
+      "options": [
+        "−5 €",
+        "5 €",
+        "25 €"
+      ],
+      "correct": 0,
+      "right": "Minus fünf. Kleine Raten, großes Loch.",
+      "wrong": "Zusammen sind das 105 € Raten. Also fehlen 5 € – minus fünf."
+    },
+    {
+      "topic": "betrug",
+      "lines": [
+        "Betrüger spielen mit Gefühlen: Gier, Angst, Zeitdruck.",
+        "Zu gutes Angebot, nur heute, Bezahlung mit Gutscheincodes, fremder Link – alles Alarmglocken.",
+        "Eine Glocke reicht. Abbrechen, melden, blockieren."
+      ],
+      "q": "Welche Bezahlung ist bei Fremden ein Warnsignal?",
+      "options": [
+        "Gutscheincodes",
+        "Bezahlung über die offizielle Plattform",
+        "Barzahlung bei Abholung im Laden"
+      ],
+      "correct": 0,
+      "right": "Richtig. Wer Gutscheincodes will, will verschwinden.",
+      "wrong": "Gutscheincodes sind das Warnsignal – die sind weg, sobald du sie verschickst."
+    }
+  ],
+  "compare": {
+    "note": "Im Prototyp sind die Durchschnittswerte simuliert.",
+    "all": {
+      "avg": 61,
+      "topics": {
+        "geld": 72,
+        "plan": 58,
+        "betrug": 66,
+        "kredit": 44,
+        "spar": 61
+      },
+      "bins": [
+        2,
+        4,
+        7,
+        11,
+        15,
+        17,
+        15,
+        11,
+        7,
+        4
+      ]
+    },
+    "age": {
+      "avg": 54,
+      "topics": {
+        "geld": 64,
+        "plan": 51,
+        "betrug": 59,
+        "kredit": 37,
+        "spar": 54
+      },
+      "bins": [
+        3,
+        6,
+        10,
+        14,
+        17,
+        15,
+        12,
+        8,
+        4,
+        2
+      ]
+    }
+  }
+}
