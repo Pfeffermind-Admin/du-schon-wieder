@@ -240,7 +240,7 @@ input[type=range]{width:100%;height:44px;accent-color:var(--gold)}
 .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .tile{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 8px 10px;text-align:center}
 .tile .ring{position:relative;width:76px;height:76px}
-.tile .ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.tile .ring > svg{position:absolute;inset:0;transform:rotate(-90deg)}
 .tile .ring .disc{position:absolute;left:15px;top:15px;width:46px;height:46px}
 .tile b{font-size:13px;line-height:1.2}
 .tile .v{font-family:var(--display);font-size:20px;line-height:1}
@@ -734,7 +734,7 @@ function vSkills() {
     var d = skillData().sort(function (a, b) { return (b.pct == null ? -1 : b.pct) - (a.pct == null ? -1 : a.pct); });
     body = '<span class="sub" style="font-size:13px;margin-top:-4px">Deine stärksten Themen zuerst</span><div class="tiles">' + d.map(function (x) {
       var on = x.pct != null;
-      return '<div class="panel tile"' + (on ? '' : ' style="opacity:.75"') + '><div class="ring"><svg width="76" height="76" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="38" fill="none" stroke="#E3D6BE" stroke-width="11"/><circle cx="46" cy="46" r="38" fill="none" stroke="' + topic(x.t).color + '" stroke-width="11" stroke-linecap="round" stroke-dasharray="' + (R * (x.pct || 0) / 100).toFixed(1) + ' ' + R.toFixed(1) + '"/></svg>' + tdisc(x.t, 46, on) + '</div><b>' + esc(topic(x.t).name) + '</b><span class="v">' + (on ? x.pct + ' %' : '–') + '</span><small>' + (on ? x.solved + ' von ' + x.played + (x.played === 1 ? ' Fall' : ' Fällen') + ' gelöst' : 'Noch nicht gespielt') + '</small></div>';
+      return '<div class="panel tile"' + (on ? '' : ' style="opacity:.75"') + '><div class="ring"><svg width="76" height="76" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="38" fill="none" stroke="#E3D6BE" stroke-width="11"/>' + (x.pct ? '<circle cx="46" cy="46" r="38" fill="none" stroke="' + topic(x.t).color + '" stroke-width="11" stroke-linecap="round" stroke-dasharray="' + (R * x.pct / 100).toFixed(1) + ' ' + R.toFixed(1) + '"/>' : '') + '</svg>' + tdisc(x.t, 46, on) + '</div><b>' + esc(topic(x.t).name) + '</b><span class="v">' + (on ? x.pct + ' %' : '–') + '</span><small>' + (on ? x.solved + ' von ' + x.played + (x.played === 1 ? ' Fall' : ' Fällen') + ' gelöst' : 'Noch nicht gespielt') + '</small></div>';
     }).join('') + '<div class="panel tile" style="opacity:.6"><div class="ring"><svg width="76" height="76" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="38" fill="none" stroke="#E3D6BE" stroke-width="11"/></svg><span class="disc" style="position:absolute;left:15px;top:15px;width:46px;height:46px;background:#D9CCB3">' + ic('lock', 22, '#141022') + '</span></div><b>Weitere Themen</b><small>Kommen mit neuen Klient:innen</small></div></div>';
   } else {
     var g = ui.g === 'age' && st.age !== null ? 'age' : 'all', D = C.compare[g];
